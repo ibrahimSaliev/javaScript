@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Exercise 1:</h2>
+
+<!-- Below we have an input field where we input the grade. After clicking on the button to calculate grade
+the function calculatGrade() is called.-->
+<input type="number" name="firstNumber" id="firstNumber" placeholder="Input first grade...">
+<button onclick="calculateGrade(document.getElementById('firstNumber').value)">Calculate Grade</button>
+<p id="exercise1"></p>
+<button onclick="calculateClassAverage()">Calculate Class Average</button>
+<p id="classAvg"></p>
+
+<script>
+
+function calculateGrade(firstNumber){
+    let grade = "";
+    if(firstNumber < 60){
+        grade = "F";
+    }else if(firstNumber >= 60 &&  firstNumber <= 70){
+        grade = "D";
+    }else if(firstNumber >= 70 &&  firstNumber <= 80){
+        grade = "C";
+    }else if(firstNumber >= 80 &&  firstNumber <= 90){
+        grade = "B";
+    }else{
+        grade = "A";
+    }
+document.getElementById("exercise1").innerHTML = grade;    
+}
+
+function calculateClassAverage(){
+    let avg = (76 + 85 + 65 + 93 + 81)/5;
+    let grade = "";
+    if(avg < 60){
+        grade = "F";
+    }else if(avg >= 60 &&  avg <= 70){
+        grade = "D";
+    }else if(avg >= 70 &&  avg <= 80){
+        grade = "C";
+    }else if(avg >= 80 &&  avg <= 90){
+        grade = "B";
+    }else{
+        grade = "A";
+    }
+document.getElementById("classAvg").innerHTML = grade; 
+}
+</script>
+
+
+<h2>Exercise 2:</h2>
+
+<p id="exercise2"></p>
+<button onclick="printMultiples()">Print Multiples!</button>
+<script>
+
+function printMultiples() {
+let multiples = "";
+for (let i = 1; i <=100; i++) {
+    if(i%3 == 0 && i%5 == 0){
+        multiples += "FizzBuzz" + "<br>";
+    }else if(i%5 == 0){
+        multiples += "Buzz" + "<br>";
+    }else if(i%3 == 0){
+        multiples += "Fizz" + "<br>";
+    }else{
+        multiples += i + "<br>";
+    }
+  
+}
+
+document.getElementById("exercise2").innerHTML = multiples;
+  
+}
+</script>
+
+<h2>Exercise 3:</h2>
+
+<button onclick="printStars()">Print Stars!</button>
+<p id="exercise3"></p>
+<script>
+
+function printStars() {
+let rows = 5;
+let asteri = "";
+for (let i = 1; i <= rows; i++) {
+  for (let j = 0; j < i; j++) {
+    asteri += "*";
+  }
+  asteri += "<br>";
+}
+
+document.getElementById("exercise3").innerHTML = asteri;
+  
+}
+
+</script>
+
+</body>
+</html>
